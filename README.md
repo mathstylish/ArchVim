@@ -1,6 +1,6 @@
-# Neovim
+# Stdvim
 
-A working neovim configuration that i use in my daily life during development
+A standard working neovim configuration that i use in my daily life during development
 
 ## Installation
 ### Linux
