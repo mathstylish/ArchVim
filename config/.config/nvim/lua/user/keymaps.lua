@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- BASIC EDITING (you don't need any plugins to use this)
 -- LEADER
 vim.g.mapleader = " "
 
@@ -26,6 +27,10 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- split editor
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
