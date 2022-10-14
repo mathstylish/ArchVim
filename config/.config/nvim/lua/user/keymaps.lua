@@ -50,3 +50,7 @@ keymap("v", ">", ">gv", opts)
 -- TWO OR MORE MODES
 -- '-' to go end of line
 keymap({"n", "v"}, "-", "$", opts)
+
+-- PLUGINS
+-- open/close file explorer
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
