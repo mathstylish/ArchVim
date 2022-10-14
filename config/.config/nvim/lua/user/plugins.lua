@@ -55,7 +55,7 @@ return packer.startup(function(use)
   use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }) -- tab bar
   use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }) -- change delete buffers and close files behavior
   use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }) -- statusbar
-  use({ "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }) -- toggleable terminal (like integrated terminal)
+  use({ "numToStr/FTerm.nvim", commit = "efd10656724a269e21ba68d65e2b058a4e606424" }) -- toggleable terminal (like integrated terminal)
   use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }) -- recent projects
   use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }) -- indent guides (including empty lines)
   use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }) -- have a menu to open file, find files... etc
