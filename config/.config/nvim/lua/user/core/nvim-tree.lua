@@ -10,6 +10,8 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+local icons = require("user.icons")
+
 local config = {
   update_focused_file = {
     enable = true,
@@ -20,27 +22,27 @@ local config = {
     root_folder_modifier = ":t",
     icons = {
       glyphs = {
-        default = "",
-        symlink = "",
+        default = icons.ui.File,
+        symlink = icons.ui.FileSymlink,
         folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
+          arrow_open = icons.ui.ChevronShortDown,
+          arrow_closed = icons.ui.ChevronShortRight,
+          default = icons.ui.Folder,
+          open = icons.ui.FolderOpen,
+          empty = icons.ui.EmptyFolder,
+          empty_open = icons.ui.EmptyFolderOpen,
+          symlink = icons.ui.FolderSymlink,
+          symlink_open = icons.ui.FolderSymlink,
         },
 
         git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
+          unstaged = icons.git.FileUnstaged,
+          staged = icons.git.FileStaged,
+          unmerged = icons.git.FileUnmerged,
+          renamed = icons.git.FileRenamed,
+          untracked = icons.git.FileUntracked,
+          deleted = icons.git.FileDeleted,
+          ignored = icons.git.FileIgnored,
         },
 
       },
@@ -51,10 +53,10 @@ local config = {
     enable = true,
     show_on_dirs = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = icons.diagnostics.BoldHint,
+      info = icons.diagnostics.BoldInformation,
+      warning = icons.diagnostics.BoldWarning,
+      error = icons.diagnostics.BoldError,
     },
   },
 
