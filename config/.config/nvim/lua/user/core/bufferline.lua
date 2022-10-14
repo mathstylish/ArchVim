@@ -4,6 +4,8 @@ if not ok then
   return
 end
 
+local icons = require("user.icons")
+
 local config = {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise })I: string,
@@ -12,12 +14,12 @@ local config = {
     left_mouse_command = "buffer %d", -- can be a string | function see "Mouse actions"
     middle_mouse_command = nil, -- can be a string | function see "Mouse actions"
     indicator_icon = nil,
-    indicator = { style = "icon", icon = "▎" },
-    buffer_close_icon = "",
-    modified_icon = "●",
-    close_icon = "",
-    left_trunc_marker = "",
-    right_trunc_marker = "",
+    indicator = { style = "icon", icon = icons.ui.BoldLineLeft },
+    buffer_close_icon = icons.close,
+    modified_icon = icons.ui.ModifiedFile,
+    close_icon = icons.ui.BoldClose,
+    left_trunc_marker = icons.ui.ArrowCircleLeft,
+    right_trunc_marker = icons.ui.ArrowCircleRight,
     max_name_length= 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
     tab_size = 21,
