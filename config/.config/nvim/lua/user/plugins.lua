@@ -62,7 +62,7 @@ return packer.startup(function(use)
   use("folke/which-key.nvim") -- you i'll never forget your keymaps
 
   -- colorschemes
-  use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })
+  use({ "folke/tokyonight.nvim", commit = "e6307e12ebe8487d17ec87fe14c3972c21466139" })
 
   -- completion plugins (can come from sources like buffers, dir paths, snippets...)
   use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- the completion plugin
