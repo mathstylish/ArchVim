@@ -96,6 +96,8 @@ return packer.startup(function(use)
   -- git integration for buffers
   use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
 
+  -- improve startup time
+  use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
 
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all plugins
