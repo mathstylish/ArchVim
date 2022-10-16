@@ -46,7 +46,7 @@ packer.init({
 -- install your plugins here
 return packer.startup(function(use)
   use({ "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" }) -- have packer manage itself
-
+  use { "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" } -- useful lua functions used by lots of plugins
   -- the bare minimum that i think an editor should have to get started
   use({ "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" }) -- autopairs, integrates with both cmp and treesitter
   use({ "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }) -- comment your code
@@ -63,6 +63,7 @@ return packer.startup(function(use)
 
   -- colorschemes
   use({ "folke/tokyonight.nvim", commit = "e6307e12ebe8487d17ec87fe14c3972c21466139" })
+  use({ "nvim-tree/nvim-web-devicons", commit = "a8cf88cbdb5c58e2b658e179c4b2aa997479b3da" })
 
   -- completion plugins (can come from sources like buffers, dir paths, snippets...)
   use({ "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" }) -- the completion plugin
@@ -86,6 +87,7 @@ return packer.startup(function(use)
 
   -- treesitter (parser generator tool and an incremental parsing library. Have better syntax highlighting and other things...)
   use({ "nvim-treesitter/nvim-treesitter", commit = "5d11dfc27849e3d7435c32dbd8ea9be35bcd990b" })
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
   -- git integration for buffers
   use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })

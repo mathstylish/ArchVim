@@ -33,6 +33,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- close buffers
+keymap("n", "<leader>c", ":Bdelete %<CR>", opts)
+
 -- split editor
 keymap("n", "<leader>vs", ":vsplit<CR>", opts)
 keymap("n", "<leader>hs", ":split<CR>", opts)
@@ -78,3 +81,9 @@ keymap(
   end,
   opts
 )
+
+-- telescope
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
