@@ -72,6 +72,7 @@ local config = {
     },
   },
 
+  filters = { custom = { "^.git$" } }
 }
 
 nvim_tree.setup(config)
