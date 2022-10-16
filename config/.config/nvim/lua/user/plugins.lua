@@ -56,13 +56,14 @@ return packer.startup(function(use)
   use({ "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }) -- change delete buffers and close files behavior
   use({ "nvim-lualine/lualine.nvim", commit = "3362b28f917acc37538b1047f187ff1b5645ecdd" }) -- statusbar
   use({ "numToStr/FTerm.nvim", commit = "efd10656724a269e21ba68d65e2b058a4e606424" }) -- toggleable terminal (like integrated terminal)
-  use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }) -- recent projects
   use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }) -- indent guides (including empty lines)
   use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }) -- have a menu to open file, find files... etc
   use("folke/which-key.nvim") -- you i'll never forget your keymaps
 
   -- colorschemes
   use({ "folke/tokyonight.nvim", commit = "e6307e12ebe8487d17ec87fe14c3972c21466139" })
+
+  -- icon theme
   use({ "nvim-tree/nvim-web-devicons", commit = "a8cf88cbdb5c58e2b658e179c4b2aa997479b3da" })
 
   -- completion plugins (can come from sources like buffers, dir paths, snippets...)
@@ -84,6 +85,7 @@ return packer.startup(function(use)
 
   -- telescope (find, filter, preview, pick faster)
   use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
+  use({ "ahmedkhalf/project.nvim", commit = "541115e762764bc44d7d3bf501b6e367842d3d4f" }) -- recent projects
 
   -- treesitter (parser generator tool and an incremental parsing library. Have better syntax highlighting and other things...)
   use({ "nvim-treesitter/nvim-treesitter", commit = "5d11dfc27849e3d7435c32dbd8ea9be35bcd990b" })
