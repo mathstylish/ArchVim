@@ -1,5 +1,4 @@
 local keymap = vim.keymap.set
-local create_user_command = vim.api.nvim_create_user_command
 local opts = { noremap = true, silent = true }
 
 -- BASIC EDITING (you don't need any plugins to use this)
@@ -58,29 +57,6 @@ keymap({ "n", "v" }, "-", "$", opts)
 -- PLUGINS
 -- open/close file explorer
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
--- fterm (toggleable integrated terminal)
-create_user_command("FTermToggle", require("FTerm").toggle, { bang = true })
-create_user_command("FTermExit", require("FTerm").exit, { bang = true })
-
-keymap("n", "<A-i>", ":FTermToggle<CR>", opts)
-keymap("t", "<A-i>", "<C-\\><C-n>:FTermToggle<CR>", opts)
-keymap("t", "<A-k>", "<C-\\><C-n>:FTermExit<CR>", opts)
-
-keymap(
-  "n", "<leader>gg",
-  function ()
-    require("FTerm"):new({
-      ft = "fterm_lazygit",
-      cmd = "lazygit",
-      dimensions = {
-        height = 0.9,
-        width = 0.9
-      }
-    }):toggle()
-  end,
-  opts
-)
 
 -- telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

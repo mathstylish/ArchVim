@@ -3,6 +3,7 @@ if not ok then
   return
 end
 
+
 local config = {
   -- filetype of the terminal buffer
   ft = "FTerm",
@@ -44,12 +45,25 @@ local config = {
 
 fterm.setup(config)
 
--- ntop
-local ntop = fterm:new({
-  ft = "fterm_ntop",
-  cmd = "ntop",
+local create_user_command = vim.api.nvim_create_user_command
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+create_user_command("FTermToggle", require("FTerm").toggle, { bang = true })
+create_user_command("FTermExit", require("FTerm").exit, { bang = true })
+
+keymap("n", "<A-i>", ":FTermToggle<CR>", opts)
+keymap("t", "<A-i>", "<C-\\><C-n>:FTermToggle<CR>", opts)
+keymap("t", "<A-k>", "<C-\\><C-n>:FTermExit<CR>", opts)
+
+local lazygit = fterm:new({
+  ft = "fterm_lazygit",
+  cmd = "lazygit",
   dimensions = {
     height = 0.9,
     width = 0.9
   }
 })
+
+keymap("n", "<leader>gg", function () lazygit:toggle() end, opts)
+
