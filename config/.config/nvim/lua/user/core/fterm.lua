@@ -3,12 +3,10 @@ if not ok then
   return
 end
 
-
 local config = {
   -- filetype of the terminal buffer
   ft = "FTerm",
   -- command to run inside the terminal
-  -- for windows use "pwsh.exe" or "powershell.exe"
   cmd = os.getenv("SHELL"),
   -- neovim's native window border. See `:h nvim_open_win` for more options
   border = "single",
@@ -17,10 +15,8 @@ local config = {
   auto_close = true,
   -- highlight group for the terminal. See `:h winhl`
   hl = 'Normal',
-
   -- transparency of the floating window. See `:h winblend`
   blend = 0,
-
   -- object containing the terminal window dimensions.
   -- the value for each field should be between `0` and `1`
   dimensions = {
@@ -29,19 +25,23 @@ local config = {
       x = 0.5, -- X axis of the terminal window
       y = 0.5, -- Y axis of the terminal window
   },
-
   -- callback invoked when the terminal exits.
   -- see `:h jobstart-options`
   on_exit = nil,
-
   -- callback invoked when the terminal emits stdout data.
   -- see `:h jobstart-options`
   on_stdout = nil,
-
   -- callback invoked when the terminal emits stderr data.
   -- see `:h jobstart-options`
   on_stderr = nil,
 }
+
+local is_windows = vim.loop.os_uname().version:match "Windows"
+
+if is_windows then
+  -- make sure to install powershell 7
+  config["cmd"] = "pwsh.exe"
+end
 
 fterm.setup(config)
 
