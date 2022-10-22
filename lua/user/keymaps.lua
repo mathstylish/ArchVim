@@ -52,7 +52,7 @@ keymap("v", ">", ">gv", opts)
 
 -- TWO OR MORE MODES
 -- '-' to go end of line
-keymap({ "n", "v" }, "-", "$", opts)
+keymap({ "n", "v" }, "_", "$", opts)
 
 -- PLUGINS
 -- open/close file explorer
